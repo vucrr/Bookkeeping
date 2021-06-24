@@ -19,7 +19,7 @@ export function _onCreate() {
   (runtimeDva.plugins || []).forEach(plugin => {
     app.use(plugin);
   });
-  app.use(require('/Users/viser/code/react_project/umi3/node_modules/dva-immer/dist/index.js')());
+  app.use(require('/Users/viser/code/react_project/Bookkeeping/node_modules/dva-immer/dist/index.js')());
   
   return app;
 }

@@ -1,6 +1,8 @@
 import React from 'react';
 import styles from './index.css';
 import router from 'umi/router'
+import { Button } from 'antd-mobile';
+// import 'antd-mobile/lib/button/style/css';
 
 const BasicLayout: React.FC = props => {
   return (
@@ -22,6 +24,7 @@ const BasicLayout: React.FC = props => {
             router.push('/c')
           }}
         >c</button>
+        <Button>qqq</Button>
       </div>
     </div>
   );
