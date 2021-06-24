@@ -1,16 +1,15 @@
 import { IConfig } from 'umi-types';
-
 const config: IConfig =  {
   treeShaking: true,
   routes: [
     {
       path: '/',
-      component: '../layouts/index',
+      component: '../pages/index',
       routes: [
-        { path: '/', component: '../pages/a/a.tsx' },
-        { path: '/a', component: '../pages/a/a.tsx' },
-        { path: '/b', component: '../pages/b/b.tsx' },
-        { path: '/c', component: '../pages/c/c.tsx' },
+        { path: '/', component: '../pages/home/home.tsx' },
+        { path: '/home', component: '../pages/home/home.tsx' },
+        { path: '/test', component: '../pages/test/test.tsx' },
+        { path: '/mine', component: '../pages/mine/mine.tsx' },
       ]
     }
   ],
@@ -21,7 +20,7 @@ const config: IConfig =  {
         immer: true,
       },
       dynamicImport: true,
-      title: 'umi3',
+      title: 'bookKeep',
       dll: false,
       routes: {
         exclude: [
@@ -29,6 +28,9 @@ const config: IConfig =  {
         ],
       },
     }]
+  ],
+  extraBabelPlugins: [
+    ['import', { libraryName: "antd-mobile", style: true }],
   ],
 }
 
