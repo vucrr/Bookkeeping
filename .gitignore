@@ -15,9 +15,6 @@ yarn.lock
 # misc
 .DS_Store
 
-# pages/.umi
-/src/pages/.umi
-
 # umi
 .umi
 .umi-production
