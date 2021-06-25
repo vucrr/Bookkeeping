@@ -8,42 +8,62 @@ import {
 import dynamic from 'umi/dynamic';
 import renderRoutes from 'umi/lib/renderRoutes';
 import history from '@@/history';
-import { routerRedux } from 'dva';
+import { routerRedux, dynamic as _dvaDynamic } from 'dva';
 
 const Router = routerRedux.ConnectedRouter;
 
 const routes = [
   {
     path: '/',
-    component: require('../../layouts/index').default,
+    component: __IS_BROWSER
+      ? _dvaDynamic({
+          component: () => import('../index'),
+        })
+      : require('../index').default,
     routes: [
       {
         path: '/',
-        component: require('../a/a.tsx').default,
+        component: __IS_BROWSER
+          ? _dvaDynamic({
+              component: () => import('../home/home.jsx'),
+            })
+          : require('../home/home.jsx').default,
         exact: true,
-        _title: 'umi3',
-        _title_default: 'umi3',
+        _title: 'bookKeep',
+        _title_default: 'bookKeep',
       },
       {
-        path: '/a',
-        component: require('../a/a.tsx').default,
+        path: '/home',
+        component: __IS_BROWSER
+          ? _dvaDynamic({
+              component: () => import('../home/home.jsx'),
+            })
+          : require('../home/home.jsx').default,
         exact: true,
-        _title: 'umi3',
-        _title_default: 'umi3',
+        _title: 'bookKeep',
+        _title_default: 'bookKeep',
       },
       {
-        path: '/b',
-        component: require('../b/b.tsx').default,
+        path: '/test',
+        component: __IS_BROWSER
+          ? _dvaDynamic({
+              component: () => import('../test/test.tsx'),
+            })
+          : require('../test/test.tsx').default,
         exact: true,
-        _title: 'umi3',
-        _title_default: 'umi3',
+        _title: 'bookKeep',
+        _title_default: 'bookKeep',
       },
       {
-        path: '/c',
-        component: require('../c/c.tsx').default,
+        path: '/mine',
+        component: __IS_BROWSER
+          ? _dvaDynamic({
+              component: () => import('../mine/mine.tsx'),
+            })
+          : require('../mine/mine.tsx').default,
         exact: true,
-        _title: 'umi3',
-        _title_default: 'umi3',
+        _title: 'bookKeep',
+        _title_default: 'bookKeep',
       },
       {
         component: () =>
@@ -52,12 +72,12 @@ const routes = [
               .default,
             { pagesPath: 'src/pages', hasRoutesInConfig: true },
           ),
-        _title: 'umi3',
-        _title_default: 'umi3',
+        _title: 'bookKeep',
+        _title_default: 'bookKeep',
       },
     ],
-    _title: 'umi3',
-    _title_default: 'umi3',
+    _title: 'bookKeep',
+    _title_default: 'bookKeep',
   },
   {
     component: () =>
@@ -66,8 +86,8 @@ const routes = [
           .default,
         { pagesPath: 'src/pages', hasRoutesInConfig: true },
       ),
-    _title: 'umi3',
-    _title_default: 'umi3',
+    _title: 'bookKeep',
+    _title_default: 'bookKeep',
   },
 ];
 window.g_routes = routes;

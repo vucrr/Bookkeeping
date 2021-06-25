@@ -20,7 +20,8 @@ export function _onCreate() {
     app.use(plugin);
   });
   app.use(require('/Users/viser/code/react_project/Bookkeeping/node_modules/dva-immer/dist/index.js')());
-  
+  app.model({ namespace: 'home', ...(require('/Users/viser/code/react_project/Bookkeeping/src/models/home/home.js').default) });
+app.model({ namespace: 'mine', ...(require('/Users/viser/code/react_project/Bookkeeping/src/models/mine/mine.ts').default) });
   return app;
 }
 
