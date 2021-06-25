@@ -20,4 +20,3 @@ yarn.lock
 .umi-production
 yarn.lock
 src/components/footerNav/index.less
-src/pages/.umi/router.js
