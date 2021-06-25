@@ -6,8 +6,8 @@ const config: IConfig =  {
       path: '/',
       component: '../pages/index',
       routes: [
-        { path: '/', component: '../pages/home/home.tsx' },
-        { path: '/home', component: '../pages/home/home.tsx' },
+        { path: '/', component: '../pages/home/home.jsx' },
+        { path: '/home', component: '../pages/home/home.jsx' },
         { path: '/test', component: '../pages/test/test.tsx' },
         { path: '/mine', component: '../pages/mine/mine.tsx' },
       ]
